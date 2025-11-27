@@ -1,16 +1,16 @@
 ![banner](https://raw.githubusercontent.com/11notes/static/refs/heads/main/img/banner/README.png)
 
-# NETBIRD-CLIENT
-![size](https://img.shields.io/badge/image_size-31MB-green?color=%2338ad2d)![5px](https://raw.githubusercontent.com/11notes/static/refs/heads/main/img/markdown/transparent5x2px.png)![pulls](https://img.shields.io/docker/pulls/11notes/netbird-client?color=2b75d6)![5px](https://raw.githubusercontent.com/11notes/static/refs/heads/main/img/markdown/transparent5x2px.png)[<img src="https://img.shields.io/github/issues/11notes/docker-netbird-client?color=7842f5">](https://github.com/11notes/docker-netbird-client/issues)![5px](https://raw.githubusercontent.com/11notes/static/refs/heads/main/img/markdown/transparent5x2px.png)![swiss_made](https://img.shields.io/badge/Swiss_Made-FFFFFF?labelColor=FF0000&logo=data:image/svg%2bxml;base64,PHN2ZyB2ZXJzaW9uPSIxIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0idHJhbnNwYXJlbnQiLz4KICA8cGF0aCBkPSJtMTMgNmg2djdoN3Y2aC03djdoLTZ2LTdoLTd2LTZoN3oiIGZpbGw9IiNmZmYiLz4KPC9zdmc+)
+# NETBIRD-EXIT-NODE
+![size](https://img.shields.io/badge/image_size-${{ image_size }}-green?color=%2338ad2d)![5px](https://raw.githubusercontent.com/11notes/static/refs/heads/main/img/markdown/transparent5x2px.png)![pulls](https://img.shields.io/docker/pulls/11notes/netbird-exit-node?color=2b75d6)![5px](https://raw.githubusercontent.com/11notes/static/refs/heads/main/img/markdown/transparent5x2px.png)[<img src="https://img.shields.io/github/issues/11notes/docker-netbird-exit-node?color=7842f5">](https://github.com/11notes/docker-netbird-exit-node/issues)![5px](https://raw.githubusercontent.com/11notes/static/refs/heads/main/img/markdown/transparent5x2px.png)![swiss_made](https://img.shields.io/badge/Swiss_Made-FFFFFF?labelColor=FF0000&logo=data:image/svg%2bxml;base64,PHN2ZyB2ZXJzaW9uPSIxIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0idHJhbnNwYXJlbnQiLz4KICA8cGF0aCBkPSJtMTMgNmg2djdoN3Y2aC03djdoLTZ2LTdoLTd2LTZoN3oiIGZpbGw9IiNmZmYiLz4KPC9zdmc+)
 
-Run netbird client rootless.
+Run netbird exit node rootless.
 
 # INTRODUCTION 📢
 
 [NetBird](https://github.com/netbirdio/netbird) (created by [netbird](https://github.com/netbirdio)) combines a WireGuard-based overlay network with Zero Trust Network Access, providing a unified open source platform for reliable and secure connectivity. Create your own selfhosted ZTNA mesh network.
 
 # SYNOPSIS 📖
-**What can I do with this?** This image will run the Netbird client as a container [rootless](https://github.com/11notes/RTFM/blob/main/linux/container/image/rootless.md). Generating a [setup key](https://docs.netbird.io/how-to/register-machines-using-setup-keys) is all you need to do.
+**What can I do with this?** This image will run the Netbird client as a container [rootless](https://github.com/11notes/RTFM/blob/main/linux/container/image/rootless.md) to be used as an exit-node or side car. Generating a [setup key](https://docs.netbird.io/how-to/register-machines-using-setup-keys) is all you need to do.
 
 # UNIQUE VALUE PROPOSITION 💶
 **Why should I run this image and not the other image(s) that already exist?** Good question! Because ...
@@ -31,8 +31,7 @@ Below you find a comparison between this image and the most used or original one
 
 | **image** | **size on disk** | **init default as** | **[distroless](https://github.com/11notes/RTFM/blob/main/linux/container/image/distroless.md)** | supported architectures
 | ---: | ---: | :---: | :---: | :---: |
-| 11notes/netbird-client | 31MB | 1000:1000 | ❌ | amd64, arm64, armv7 |
-| netbirdio/netbird | 49MB | 0:0 | ❌ | amd64, arm64, armv7 |
+| netbirdio/netbird | 50MB | 0:0 | ❌ | amd64, arm64, armv7 |
 
 # VOLUMES 📁
 * **/netbird/etc** - Directory of your client configs
@@ -90,7 +89,7 @@ To find out how you can change the default UID/GID of this container image, cons
 # MAIN TAGS 🏷️
 These are the main tags for the image. There is also a tag for each commit and its shorthand sha256 value.
 
-* [0.60.2](https://hub.docker.com/r/11notes/netbird-client/tags?name=0.60.2)
+* [0.60.2](https://hub.docker.com/r/11notes/netbird-exit-node/tags?name=0.60.2)
 
 ### There is no latest tag, what am I supposed to do about updates?
 It is my opinion that the ```:latest``` tag is a bad habbit and should not be used at all. Many developers introduce **breaking changes** in new releases. This would messed up everything for people who use ```:latest```. If you don’t want to change the tag to the latest [semver](https://semver.org/), simply use the short versions of [semver](https://semver.org/). Instead of using ```:0.60.2``` you can use ```:0``` or ```:0.60```. Since on each new version these tags are updated to the latest version of the software, using them is identical to using ```:latest``` but at least fixed to a major or minor version. Which in theory should not introduce breaking changes.
@@ -99,13 +98,13 @@ If you still insist on having the bleeding edge release of this app, simply use 
 
 # REGISTRIES ☁️
 ```
-docker pull 11notes/netbird-client:0.60.2
-docker pull ghcr.io/11notes/netbird-client:0.60.2
-docker pull quay.io/11notes/netbird-client:0.60.2
+docker pull 11notes/netbird-exit-node:0.60.2
+docker pull ghcr.io/11notes/netbird-exit-node:0.60.2
+docker pull quay.io/11notes/netbird-exit-node:0.60.2
 ```
 
 # SOURCE 💾
-* [11notes/netbird-client](https://github.com/11notes/docker-netbird-client)
+* [11notes/netbird-exit-node](https://github.com/11notes/docker-netbird-exit-node)
 
 # PARENT IMAGE 🏛️
 > [!IMPORTANT]
@@ -121,9 +120,9 @@ docker pull quay.io/11notes/netbird-client:0.60.2
 
 # CAUTION ⚠️
 > [!CAUTION]
->* This image is rootless and runs in userspace (not kernel space). Use this image as an **exit node** or attach to another container to expose that container via Netbird
+>* This image is rootless and runs in userspace (not kernel space). Use this image as an **exit node** or attach to another container to expose that container via Netbird. Do not use this image as a normal netbird client, use [11notes/netbird-client](https://github.com/11notes/docker-netbird-client) for that.
 
 # ElevenNotes™️
-This image is provided to you at your own risk. Always make backups before updating an image to a different version. Check the [releases](https://github.com/11notes/docker-netbird-client/releases) for breaking changes. If you have any problems with using this image simply raise an [issue](https://github.com/11notes/docker-netbird-client/issues), thanks. If you have a question or inputs please create a new [discussion](https://github.com/11notes/docker-netbird-client/discussions) instead of an issue. You can find all my other repositories on [github](https://github.com/11notes?tab=repositories).
+This image is provided to you at your own risk. Always make backups before updating an image to a different version. Check the [releases](https://github.com/11notes/docker-netbird-exit-node/releases) for breaking changes. If you have any problems with using this image simply raise an [issue](https://github.com/11notes/docker-netbird-exit-node/issues), thanks. If you have a question or inputs please create a new [discussion](https://github.com/11notes/docker-netbird-exit-node/discussions) instead of an issue. You can find all my other repositories on [github](https://github.com/11notes?tab=repositories).
 
-*created 24.11.2025, 03:02:30 (CET)*
+*created 27.11.2025, 10:42:52 (CET)*
