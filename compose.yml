@@ -8,8 +8,8 @@ x-lockdown: &lockdown
     - "no-new-privileges=true"
 
 services:
-  client:
-    image: "11notes/netbird-client:0.60.2"
+  exit-node:
+    image: "11notes/netbird-exit-node:0.60.2"
     <<: *lockdown
     environment:
       TZ: "Europe/Zurich"
@@ -17,7 +17,7 @@ services:
       NETBIRD_URL: "${NETBIRD_URL}"
       NETBIRD_SETUP_KEY: "${NETBIRD_SETUP_KEY}"
     volumes:
-      - "netbird.etc:/netbird/etc"
+      - "exit-node.etc:/netbird/etc"
     tmpfs:
       - "/run:uid=1000,gid=1000"
     networks:
@@ -25,7 +25,7 @@ services:
     restart: "always"
 
 volumes:
-  netbird.etc:
+  exit-node.etc:
 
 networks:
   frontend:
