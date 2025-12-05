@@ -3,7 +3,7 @@
   "name": "netbird-exit-node",
   "root": "/netbird",
   "semver": {
-    "version": "0.60.4"
+    "version": "0.60.7"
   },
   "readme": {
     "description": "run netbird exit node rootless",
