@@ -72,7 +72,7 @@ jobs:
                       }else if(!job.inputs?.tag){
                         core.setFailed(`input does not contain valid git tag: ${inspect(job.inputs, {showHidden:false, depth:null, colors:true})}`);
                       }
-                      if(job.inputs?.version === 'null'){
+                      if(job.inputs?.version === 'null' || null === job.inputs?.version){
                         core.setFailed(`input version is set to null: ${inspect(job.inputs, {showHidden:false, depth:null, colors:true})}`);
                       }
                     }catch(e){
