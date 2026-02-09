@@ -103,7 +103,7 @@ jobs:
               const tag = semver.valid(semver.coerce(job.inputs.tag));
               const checks = {latestTagExists:true};
 
-              core.info(inspect({latest:latest, current:current, tag:tag, checks:checks}}, {showHidden:false, depth:null, colors:true}));
+              core.info(inspect({latest:latest, current:current, tag:tag, checks:checks}, {showHidden:false, depth:null, colors:true}));
 
               try{
                 const tag = await fetch(`https://hub.docker.com/v2/repositories/${job.json.image}/tags/${latest}`);
