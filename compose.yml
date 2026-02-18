@@ -9,7 +9,7 @@ x-lockdown: &lockdown
 
 services:
   exit-node:
-    image: "11notes/netbird-exit-node:0.65.1"
+    image: "11notes/netbird-exit-node:0.65.2"
     <<: *lockdown
     environment:
       TZ: "Europe/Zurich"
